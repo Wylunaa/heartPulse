@@ -36,15 +36,15 @@ body {
 }
 
 .heart.pulse {
-    animation: pulse 2s  infinite alternate;
+    animation: pulse 2s infinite alternate;
 }
 
 
 @keyframes pulse {
-    from{
+    0%{
         transform: rotate(-45deg) scale(1);
     }
-    to {
+    100% {
         transform: rotate(-45deg) scale(1.3);
     }
 }
