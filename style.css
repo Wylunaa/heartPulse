@@ -4,13 +4,47 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
+    background-color: white;
 }
 .heart {
-    width: 110px;
-    height: 110px;
+    width: 200px;
+    height: 200px;
     background-color: red;
     position: relative;
     transform: rotate(-45deg);
     transform: 50% 50%;
-    animation: pulse 1.2s infinite aleternate;
+    animation: pulse 1.2s infinite alternate;
+    cursor: pointer;
+}
+.heart:before, .heart:after {
+    content:'';
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+} 
+.heart:before {
+    top: -100px;
+    transform: rotate(-45deg);
+    transform: rotate(0 100%);
+}
+.heart:after {
+    left: 100px;
+    transform: rotate(45deg);
+    transform: rotate(100% 100%);
+}
+
+.heart.pulse {
+    animation: pulse 2s  infinite alternate;
+}
+
+
+@keyframes pulse {
+    from{
+        transform: rotate(-45deg) scale(1);
+    }
+    to {
+        transform: rotate(-45deg) scale(1.3);
+    }
 }
